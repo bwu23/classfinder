@@ -1,5 +1,7 @@
 package classfinder.classfinder;
 
+import classfinder.entities.Course;
+import classfinder.webparser.utils.ParsedCourseNumber;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -33,6 +35,16 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+        testParsedCourseNum("C137A","0137A+C+");
+        testParsedCourseNum("M16", "0016++M+");
+        testParsedCourseNum("31", "0031++++");
+        testParsedCourseNum("35L", "0035L+++");
+    }
+    
+    private void testParsedCourseNum(String original, String expected) {
+    	Course c = new Course();
+    	c.setCourseNum(original);
+    	ParsedCourseNumber pcn = new ParsedCourseNumber(c);
+    	assertTrue(expected.equals(pcn.getParsedCourseNumber()));
     }
 }

@@ -2,6 +2,9 @@ package classfinder.entities;
 
 import classfinder.entities.enums.Quarter;
 
+/**
+ * @author bwu23
+ */
 public class Course {
 	private String dept;
 	private String courseNum;
