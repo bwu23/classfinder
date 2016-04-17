@@ -9,6 +9,7 @@ public enum SectionType {
 	UNDEFINED;
 	
 	public static SectionType getType(String type) {
+		
 		switch(type.toUpperCase()) {
 		case "LEC":
 			return LEC;

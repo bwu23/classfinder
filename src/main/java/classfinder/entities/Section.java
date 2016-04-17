@@ -8,9 +8,9 @@ import classfinder.entities.enums.Status;
  */
 public class Section {
 	
-	protected long id;
+	protected String id;
 	protected SectionType type;
-	protected int section;
+	protected String section;
 	protected String bldg;
 	protected String room;
 	protected int enrolled;
@@ -19,10 +19,10 @@ public class Section {
 	protected int waitlistCap;
 	protected Status status;
 	
-	public long getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public SectionType getType() {
@@ -31,10 +31,10 @@ public class Section {
 	public void setType(SectionType type) {
 		this.type = type;
 	}
-	public int getSection() {
+	public String getSection() {
 		return section;
 	}
-	public void setSection(int section) {
+	public void setSection(String section) {
 		this.section = section;
 	}
 	public String getBldg() {

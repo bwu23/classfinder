@@ -34,7 +34,7 @@ public class DataParser extends Section {
 		
 		for (int i=0; i<e.childNodeSize(); i++) {
 			// for each column in the row
-			Node child = e.child(i);
+			Node child = e.childNode(i);
 			if (child instanceof Element && ((Element) child).className() != "dgdClassDataColumnSpacer") {
 				SectionParseHelper.setValueByTag(s, (Element)child);	// set appropriate field for section object
 			}

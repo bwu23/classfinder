@@ -25,15 +25,17 @@ public class SectionParseHelper {
 	}
 	
 	public static void setValueByTag(Section sec, Element elm) {
+		String text = elm.text();
+		String className = elm.className();
 		switch (elm.className()) {
 		case ID: 
-			sec.setId(Integer.parseInt(elm.text().trim()));
+			sec.setId(elm.text());
 			break;
 		case TYPE:
 			sec.setType(SectionType.getType(elm.text()));
 			break;
 		case SECTION:
-			sec.setSection(Integer.parseInt(elm.text().trim()));
+			sec.setSection(elm.text());
 			break;
 		case BLDG:
 			sec.setBldg(elm.text());

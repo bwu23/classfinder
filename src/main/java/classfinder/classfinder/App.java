@@ -1,10 +1,16 @@
 package classfinder.classfinder;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import org.jsoup.nodes.Document;
+
 import classfinder.entities.Course;
 import classfinder.entities.Section;
 import classfinder.entities.enums.Quarter;
 import classfinder.entities.helpers.SectionParseHelper;
 import classfinder.webparser.DataFetcher;
+import classfinder.webparser.DataParser;
 import classfinder.webparser.utils.UrlGenerator;
 
 /**
@@ -19,8 +25,18 @@ public class App
     	c.setDept("COM SCI");
     	c.setQtr(Quarter.SPRING);
     	c.setYear(16);
-    	System.out.println(SectionParseHelper.generateTag(1, SectionParseHelper.BLDG));
-    	DataFetcher.get(UrlGenerator.getUrl(c));
+    	
+    	ArrayList<Section> sections = new ArrayList<Section>();
+    	try {
+			Document doc = DataFetcher.get(c);
+			DataParser parser = new DataParser(doc);
+			while (parser.hasNext()) {
+				sections.add(parser.next());
+			}
+			System.out.println("DONE!");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
  
     }
 }
