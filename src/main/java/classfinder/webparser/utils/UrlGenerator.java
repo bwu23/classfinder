@@ -14,6 +14,7 @@ public class UrlGenerator {
 		ParsedCourseNumber pcn = new ParsedCourseNumber(c);
 		return pcn.getParsedCourseNumber();
 	}
+	
 	private static String formatDept(String dept) {
 		return dept.replace(' ', '+');
 	}

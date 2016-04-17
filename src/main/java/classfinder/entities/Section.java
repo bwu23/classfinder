@@ -1,20 +1,23 @@
 package classfinder.entities;
 
 import classfinder.entities.enums.SectionType;
+import classfinder.entities.enums.Status;
 
 /**
  * @author bwu23
  */
 public class Section {
-	private long id;
-	private SectionType type;
-	private int section;
-	private String bldg;
-	private String room;
-	private int enrolled;
-	private int enrollCap;
-	private int waitlisted;
-	private int waitlistCap;
+	
+	protected long id;
+	protected SectionType type;
+	protected int section;
+	protected String bldg;
+	protected String room;
+	protected int enrolled;
+	protected int enrollCap;
+	protected int waitlisted;
+	protected int waitlistCap;
+	protected Status status;
 	
 	public long getId() {
 		return id;
@@ -69,5 +72,11 @@ public class Section {
 	}
 	public void setWaitlistCap(int waitlistCap) {
 		this.waitlistCap = waitlistCap;
+	}
+	public Status getStatus() {
+		return status;
+	}
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 }
